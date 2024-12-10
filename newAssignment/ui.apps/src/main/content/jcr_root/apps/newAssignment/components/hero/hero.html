@@ -1,8 +1,17 @@
 
 <sly data-sly-use.model="com.newAssignment.core.models.HeroSlingModel">
-    ${model.text}
-    ${model.description}
-    <img src="${model.fileReference}"/>
-    
-    
+   
+      <div class="hero-component">
+        <div class="hero-image-container">
+            <img class="hero-image" src="${model.fileReference}" alt="Image Description" />
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title"> ${model.text}</h1>
+            <p class="hero-description">${model.description @ context='html'}</p>
+            <span class="hero-label">${properties.label}</span>
+            <a class="hero-link" href="${properties.url}" target="_blank">${model.text}</a>
+        </div>
+      </div>
     </sly>
+
+   
